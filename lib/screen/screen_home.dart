@@ -1,7 +1,6 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_quiz_app/model/model_quiz.dart';
+import 'package:flutter_quiz_app/screen/screen_quiz.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -88,7 +87,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       style: TextStyle(color: Colors.white),
                     ),
                     color: Colors.deepPurple,
-                    onPressed: () {}, //일단 빈 형태로 만들어준다.
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => QuizScreen(
+                            quizs: quizs,
+                          )
+                        ),
+                      );
+                    },
                   ),
                 ),
               ),

@@ -3,7 +3,7 @@ import 'package:flutter_quiz_app/model/model_quiz.dart';
 
 class QuizScreen extends StatefulWidget {
   List<Quiz> quizs;
-  QuizScreen({this.quizs}); //생성자를 통해 이전 화면으로부터 퀴즈 데이터를 넘겨받을 수 있다.
+  QuizScreen({required this.quizs}); //생성자를 통해 이전 화면으로부터 퀴즈 데이터를 넘겨받을 수 있다.
 
   //상태관리 선언
   @override
