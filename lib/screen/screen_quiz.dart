@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_quiz_app/model/model_quiz.dart';
+import 'package:flutter_quiz_app/screen/screen_result.dart';
 import 'package:flutter_quiz_app/widget/widget_candidate.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
@@ -114,7 +115,10 @@ class _QuizScreenState extends State<QuizScreen> {
                   color: Colors.deepPurple,
                   onPressed: _answers[_currentTndex] == -1 ? null : () { //-1이라면 정답체크 안됐으므로 null로 설정해 못넘어가도록 함
                     if(_currentTndex == widget.quizs.length -1) { //마지막 퀴즈인지 확인. 마지막이면 결과보기 화면으로 간다.
-                      //TODO
+                      Navigator.push(context,
+                          MaterialPageRoute(
+                            builder: (context) => ResultScreen(answers: _answers, quizs: widget.quizs)
+                      ));
                     }else { //마지막 퀴즈가 아니라면 _answerState를 false로 초기화 및 _currentTndex를 증가시킨다.
                       _answerState = [false, false, false, false];
                       _currentTndex += 1;
