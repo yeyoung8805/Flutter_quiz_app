@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_quiz_app/model/model_quiz.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -8,6 +9,25 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  List<Quiz> quizs = [
+    //퀴즈 더미 데이터 3개 만듦
+    Quiz.fromMap({
+      'title': 'test',
+      'candidates': ['a', 'b', 'c', 'd'],
+      'answer': 0
+    }),
+    Quiz.fromMap({
+      'title': 'test',
+      'candidates': ['a', 'b', 'c', 'd'],
+      'answer': 0
+    }),
+    Quiz.fromMap({
+      'title': 'test',
+      'candidates': ['a', 'b', 'c', 'd'],
+      'answer': 0
+    }),
+  ];
+
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
