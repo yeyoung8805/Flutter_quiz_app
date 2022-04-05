@@ -21,9 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
       //setState로 isLoading을 변경해주고, response를 await http.get으로 가져온다.
       isLoading = true;
     });
-    final response =
-        await http.get(Uri.parse('https://drf-quiz-test.herokuapp.com/quiz/3/')); //Uri.parse() 로 감싸줘야 한다.
-        // await http.get("https://drf-quiz-test.herokuapp.com/quiz/3/");
+    final response = await http.get(Uri.parse('https://drf-quiz-test.herokuapp.com/quiz/3/')); //Uri.parse() 로 감싸줘야 한다.
     //상태코드가 200이면 setState 로 quizs 를 업데이트하고, isLoading 을 변경한다.
     if (response.statusCode == 200) {
       setState(() {
